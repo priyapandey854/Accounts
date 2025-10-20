@@ -68,21 +68,23 @@
 <body>
     <h1>This is Sign In & Login Page </h1>
     <!-- <button onclick="toggleForm()">Sign In</button> -->
+      <!-- <button onclick="toggleForm()">Login</button> -->
     <button onclick="showForm('signinform')">Sign In
     </button>
     <button onclick="showForm('login')">Login
     </button>
     <!-- hidden sign in from -->
-    <div id="signinform">
+    <form id="signinform" method="POST">
+        {% csrf_token %}
         <h2>Sign in</h2>
-        <input type="username" name="name" placeholder="Username"><br>
+        <input type="text" name="name" placeholder="Username"><br>
         <input type="email" name="email" placeholder="Email" required><br>
         <input type="password" name="password" placeholder="password" required>
         <!-- <input class="me" type="checkbox"> Remember me <br> -->
         <button type="submit" name="signin">sign in</button><br>
         <!-- <button type="submit" name="google" >Sign in with Google</button><br>
         <a href="#">Forgotten your password</a> -->
-    </div>
+    </form>
     <!-- <script>
         function toggleForm() {
             let form = document.getElementById("signinform");
@@ -93,7 +95,9 @@
             }
         }
     </script> -->
-    <div id="login">
+    <!-- Login Form -->
+    <form id="login" method="POST">
+        {% csrf_token %}
         <h1>Welcome</h1>
         <h2>Register your account</h2>
         <label>Name</label><br>
@@ -106,8 +110,8 @@
         <input name="password" type="password" placeholder="Enter your password.."><br><br>
         <label>Confirm Password</label><br>
         <input name="confirm password" type="password" placeholder="Enter your password again.."><br><br>
-        <button type="submit">Login In</button>
-    </div>
+        <button type="submit" name="login">Login In</button>
+    </form>
     <script>
         function showForm(formId) {
             // Sab forms ko hide kar do
