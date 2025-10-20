@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign in page</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+            /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); */
+        }
+
+        #signinform {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            width: 300px;
+            margin: 20px auto 0px auto;
+            border-radius: 8px;
+            border-color: #f9f9f9;
+        }
+        input {
+            display: block;
+            width: 90%;
+            padding: 8px;
+            margin: 10px auto;
+            border: 1px solid #aaa;
+        }
+        button {
+            padding: 8px 15px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border: none;
+            background-color: #007bff;
+        }
+        button a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #login {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            width: 300px;
+            margin: 20px auto 0px auto;
+            border-radius: 8px;
+            border-color: #f9f9f9;
+            /* display: none;
+            width: 400px;
+            margin: 40px 400px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); */
+        }
+    </style>
+</head>
+<body>
+    <h1>This is Sign In & Login Page </h1>
+    <!-- <button onclick="toggleForm()">Sign In</button> -->
+    <button onclick="showForm('signinform')">Sign In
+    </button>
+    <button onclick="showForm('login')">Login
+    </button>
+    <!-- hidden sign in from -->
+    <div id="signinform">
+        <h2>Sign in</h2>
+        <input type="username" name="name" placeholder="Username"><br>
+        <input type="email" name="email" placeholder="Email" required><br>
+        <input type="password" name="password" placeholder="password" required>
+        <!-- <input class="me" type="checkbox"> Remember me <br> -->
+        <button type="submit" name="signin">sign in</button><br>
+        <!-- <button type="submit" name="google" >Sign in with Google</button><br>
+        <a href="#">Forgotten your password</a> -->
+    </div>
+    <!-- <script>
+        function toggleForm() {
+            let form = document.getElementById("signinform");
+            if (form.style.display === "none") {
+                form.style.display = "block";
+            } else {
+                form.style.display = "none";
+            }
+        }
+    </script> -->
+    <div id="login">
+        <h1>Welcome</h1>
+        <h2>Register your account</h2>
+        <label>Name</label><br>
+        <input name="name" type="text" placeholder="Enter your full name..."><br><br>
+        <label>Username</label><br>
+        <input name="username" type="text" placeholder="Enter a username."><br><br>
+        <label>Email</label><br>
+        <input name="email" type="email" placeholder="Enter your email.."><br><br>
+        <label>Password</label><br>
+        <input name="password" type="password" placeholder="Enter your password.."><br><br>
+        <label>Confirm Password</label><br>
+        <input name="confirm password" type="password" placeholder="Enter your password again.."><br><br>
+        <button type="submit">Login In</button>
+    </div>
+    <script>
+        function showForm(formId) {
+            // Sab forms ko hide kar do
+            document.getElementById("signinform").style.display = "none";
+            document.getElementById("login").style.display = "none";
+
+            // Sirf clicked form ko show karo
+            document.getElementById(formId).style.display = "block";
+        }
+    </script>
+</body>
+</html>
